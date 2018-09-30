@@ -130,3 +130,25 @@ add_action('after_setup_theme', function () {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });
+
+/**
+ * ACF Options Pages
+ */
+if (function_exists('acf_add_options_page')) {
+	$parent = acf_add_options_page(array(
+		'page_title' 	=> 'Trevor Theme Settings',
+		'menu_title' 	=> 'Theme Settings',
+		'redirect' 		=> true
+	));
+
+	acf_add_options_sub_page([
+        'page_title' 	=> 'Front Page',
+		'menu_title'	=> 'Front Page',
+		'parent_slug' 	=> $parent['menu_slug'],
+    ]);
+}
+
+/**
+ * Adds the custom fields metabox back into the post edit screen.
+ */
+add_filter('acf/settings/remove_wp_meta_box', '__return_false');

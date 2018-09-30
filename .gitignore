@@ -21,3 +21,7 @@ vendor/*
 
 # Node
 node_modules
+
+# Plugin Whitelist
+!web/app/plugins/advanced-custom-fields-pro
+!web/app/plugins/acf-cf7-field-master
