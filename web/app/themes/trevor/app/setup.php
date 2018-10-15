@@ -152,3 +152,38 @@ if (function_exists('acf_add_options_page')) {
  * Adds the custom fields metabox back into the post edit screen.
  */
 add_filter('acf/settings/remove_wp_meta_box', '__return_false');
+
+add_action( 'init', function () {
+
+	/**
+	 * Post Type: Portfolios.
+	 */
+
+	$labels = array(
+		"name" => __( "Portfolios", "sage" ),
+		"singular_name" => __( "Portfolio", "sage" ),
+	);
+
+	$args = array(
+		"label" => __( "Portfolios", "sage" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => false,
+		"rest_base" => "",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "portfolio", "with_front" => true ),
+		"query_var" => true,
+		"supports" => array( "title", "editor", "thumbnail", "excerpt", "post-formats" ),
+	);
+
+	register_post_type( "portfolio", $args );
+});
