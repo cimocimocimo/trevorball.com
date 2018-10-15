@@ -104,8 +104,10 @@
     "yargs": "~11.0.0"
   },
   "dependencies": {
+    "gsap": "^2.0.2",
     "jquery": "^3.3.1",
     "normalize.css": "^8.0.0",
+    "scrollmagic": "^2.0.6",
     "susy": "^3.0.5"
   }
 }

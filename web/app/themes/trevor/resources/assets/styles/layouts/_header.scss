@@ -1,2 +1,63 @@
-// TODO: .banner .nav li {}
-// TODO: .banner .nav a {}
+.banner {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+}
+
+.brand {
+  text-decoration: none;
+  color: black;
+  display: block;
+  float: left;
+
+  h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+.nav-primary {
+  display: block;
+  float: right;
+  text-align: right;
+
+  a {
+    position: relative;
+    display: block;
+    float: right;
+    clear: both;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+
+    .progress {
+      content: '';
+      display: none;
+      background: blue;
+      height: 0.125rem;
+      width: 50%;
+      position: absolute;
+      top: 50%;
+      right: 0;
+    }
+
+    &.active {
+      .progress {
+        display: block;
+      }
+    }
+  }
+}
